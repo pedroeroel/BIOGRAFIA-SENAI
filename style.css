@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+/* RESET */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+    font-family: 'Montserrat';
+}
+
+/* COLORS */
+
+:root {
+    --darker: #272827;
+    --darker-transparent: #272827d0;
+    --dark: #444543;
+    --light: #EAEDE6;
+    --light-transparent: #EAEDE6d0;
+    --lightgray: #C1C4BE;
+    --gray: #71736F;
+}
+
+@media only screen and (min-width: 1280px) {
+    body {
+        min-height: 100vh;
+        scroll-behavior: smooth;
+        background-color: black;
+    }
+
+    #img-row {
+        position: fixed;
+        z-index: -1;
+        display: inline-flex;
+        flex-flow: nowrap row;
+        height: 100vh;
+        overflow-x: visible;
+        overflow-y: hidden;
+        animation: img-row infinite;
+        animation-duration: 240s;
+    }
+
+    .img-fig {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+    }
+
+    #img-row img {
+        height: 100vh;
+        transition-duration: 1s;
+        scale: 1;
+    }
+
+    #backgroundcolor {
+        z-index: 3;
+        background-color: var(--darker-transparent);
+        min-height: 100vh;
+    }
+
+    /* HEADER */
+
+    header{
+        top: 0;
+        position: fixed;
+        height: 10vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: header-shrink;
+        animation-timeline: view(0vh 90vh);
+        animation-range: 10vh 120vh;
+    }
+
+    #main-h1 {
+        position: fixed;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: row nowrap;
+    }
+
+    #main-h1 h1{
+        text-shadow: var(--darker) -2px 0px;
+        color: var(--light);
+        text-align: center;
+        font-size: 5vh;
+        transition: 1s;
+        animation: main-h1-shrink;
+        border-bottom: 3px solid var(--light);
+        animation-timeline: view(0vh 90vh);
+        animation-range: -35vh 120vh;
+    }
+
+    #main-h1 h1:hover{
+        text-shadow: transparent 0px 0px;
+        color: var(--light-transparent);
+    }
+
+    /* MAIN */
+
+    main {
+        padding: 100vh 5vw 5vh 5vw;
+        display: flex;
+        font-family: Mulish;
+        flex-wrap: wrap;
+        color: var(--light);
+        text-shadow: var(--darker) 1px 1px 1px;
+    }
+
+    #phrase {
+        margin: 10vh 0;
+        text-align: center;
+        width: 100vw;
+        font-family: 'Montserrat';
+        font-size: 4.5vh;
+        font-weight: 200;
+    }
+
+    section {
+        border: 3px solid var(--light);
+        border-radius: 5vh;
+        padding: 2.5vw;
+    }
+
+    article{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 2.5vh;
+    }
+
+    article p {
+        min-width: 30vw;
+        margin-bottom: 2.5vh;
+        text-align: justify;
+    }
+
+    article figure{
+        display: flex;
+}
+
+    article img{
+        border: 3px solid var(--light);
+        width: 20vw;
+        border-radius: 2vh;
+        margin: 0 0 2.5vh 2.5vh;
+    }
+
+}
+
+/* KEYFRAMES */
+
+@keyframes img-row {
+    0% {
+        left: 0vw;
+    }
+    50% {
+        left: -135vw;
+    }
+    100% {
+        left: 0vw;
+    }
+}
+
+@keyframes header-shrink {
+    from {
+        height: 100vh;
+        width: 100vw;
+    }
+    to {
+        height: 10vh;
+        width: 100vw;
+    }
+}
+
+@keyframes main-h1-shrink {
+    0% {
+        font-size: 30vh;
+        border: 0;
+        text-shadow: var(--darker) -10px 0px;
+    }
+
+    70% {
+        border: 0;
+        font-size: 5vh;
+        text-shadow: var(--darker) -1px 0px;
+    }
+
+    100% {
+        border-bottom: 3px solid var(--light);
+        font-size: 5vh;
+        text-shadow: var(--darker) 0px 0px;
+    }
+}
