@@ -145,6 +145,7 @@ html {
     section {
         border: 3px solid var(--light);
         border-radius: 5vh;
+        backdrop-filter: blur(0.5vh);
         padding: 2.5vw;
     }
 
